@@ -50,8 +50,7 @@ const search = () => {
             hide-details rounded="pill" prepend-inner-icon="mdi-magnify" aria-label="Buscar" />
         </form>
 
-        <v-btn variant="outlined" color="white" to="/login">Ingresa</v-btn>
-        <v-btn color="secondary" href="https://www.biblored.gov.co/afiliese-a-biblored" target="_blank">Afíliate</v-btn>
+        <UserMenu />
       </template>
     </div>
   </v-app-bar>
@@ -76,8 +75,7 @@ const search = () => {
       <v-list-item to="/centro-de-ayuda" title="Centro de ayuda" prepend-icon="mdi-help-circle-outline" @click="drawer = false" />
     </v-list>
     <div class="pa-4 d-flex flex-column ga-2">
-      <v-btn block variant="outlined" color="primary" to="/login" @click="drawer = false">Ingresa</v-btn>
-      <v-btn block color="secondary" href="https://www.biblored.gov.co/afiliese-a-biblored" target="_blank">Afíliate</v-btn>
+      <UserMenu block />
     </div>
   </v-navigation-drawer>
 </template>
