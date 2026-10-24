@@ -1,0 +1,7 @@
+html { scroll-behavior: smooth; }
+.section-title { font-weight: 700; color: #16223f; letter-spacing: -0.01em; }
+.section-sub { color: #5b6477; }
+.container-bdb { max-width: 1280px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+@media (max-width: 600px) { .container-bdb { padding-left: 16px; padding-right: 16px; } }
+.clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
