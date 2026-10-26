@@ -5,6 +5,5 @@
     <ExpositionsCarousel />
     <MostViewed />
     <AlliesCarousel />
-    <RegisterBanner />
   </div>
 </template>

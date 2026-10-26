@@ -10,8 +10,7 @@ interface Session {
 }
 
 export const useAuthStore = defineStore('auth', () => {
-  // La sesión vive en una cookie: persiste al recargar y también está disponible
-  // en el servidor (SSR), así el header no parpadea entre "Ingresa" y el nombre.
+  // La sesión vive en una cookie: persiste al recargar y también llega al servidor (SSR).
   const session = useCookie<Session | null>('bdb_session', {
     default: () => null,
     maxAge: 60 * 60 * 24 * 7, // 7 días
@@ -27,17 +26,16 @@ export const useAuthStore = defineStore('auth', () => {
   const isAuthenticated = computed(() => !!session.value?.token)
 
   // MOCK: reemplazar por $fetch('/api/auth/login', { method: 'POST', body: {...} }).
-  // Con un backend real, el token debe viajar en una cookie httpOnly puesta por el servidor.
   async function login(email: string, password: string) {
     loading.value = true
     error.value = null
     try {
       await new Promise((r) => setTimeout(r, 600))
       if (password.length < 6) throw new Error('La contraseña debe tener al menos 6 caracteres.')
-      const name = email.split('@')[0].replace(/[._-]/g, ' ')
+      const local = email.split('@')[0].replace(/[._-]/g, ' ')
       session.value = {
         token: `mock-${Date.now()}`,
-        user: { id: Math.abs(hash(email)), name: name.charAt(0).toUpperCase() + name.slice(1), email }
+        user: { id: Math.abs(hash(email)), name: local.charAt(0).toUpperCase() + local.slice(1), email }
       }
       return true
     } catch (e) {

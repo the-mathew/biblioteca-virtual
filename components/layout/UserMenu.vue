@@ -6,7 +6,7 @@ const auth = useAuthStore()
 <template>
   <v-menu v-if="auth.isAuthenticated">
     <template #activator="{ props }">
-      <v-btn v-bind="props" :block="block" variant="outlined" color="primary" class="text-white"
+      <v-btn v-bind="props" :block="block" variant="outlined" color="white"
         prepend-icon="mdi-account-circle" append-icon="mdi-chevron-down">
         {{ auth.user?.name }}
       </v-btn>
@@ -17,8 +17,5 @@ const auth = useAuthStore()
     </v-list>
   </v-menu>
 
-  <template v-else>
-    <v-btn :block="block" variant="outlined" color="white" to="/login">Ingresa</v-btn>
-    <v-btn :block="block" color="secondary" href="https://www.biblored.gov.co/afiliese-a-biblored" target="_blank">Afíliate</v-btn>
-  </template>
+  <v-btn v-else :block="block" color="secondary" to="/login">Ingresa</v-btn>
 </template>
