@@ -20,8 +20,8 @@ const search = () => {
       <NuxtLink to="/" class="text-white text-decoration-none d-flex align-center ga-2" aria-label="Biblioteca digital de Bogotá">
         <v-icon icon="mdi-book-open-page-variant" size="32" color="secondary" />
         <div class="d-none d-sm-block" style="line-height:1.1">
-          <div class="text-subtitle-1 font-weight-bold">Biblioteca Digital</div>
-          <div class="text-caption">de Bogotá · BibloRed</div>
+          <div class="text-subtitle-1 font-weight-bold">Hookod</div>
+          <div class="text-caption">Biblioteca digital</div>
         </div>
       </NuxtLink>
 
